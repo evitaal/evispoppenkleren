@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="nl">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Evi's poppenkleren</title>
+ <meta name="description" content="Handgemaakte poppenkleren. Opbrengst voor KiKa. Bestellen via e-mail." />
+ <!-- Friendly rounded font -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+ <style>
+ :root{
+ --bg: #fff6ff;
+ --paper: #ffffff;
+ --ink: #1f2937;
+ --muted: #6b7280;
+ --a: #ff4fa3;  /* accent pink */
+ --b: #4fd1c5;  /* mint */
+ --c: #ffd166;  /* sunny */
+ --d: #6c63ff;  /* purple */
+ --shadow: 0 10px 25px rgba(31,41,55,0.12);
+ --radius: 22px;
+ }
+ *{ box-sizing: border-box; }
+ body{
+ margin:0;
+ font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+ color: var(--ink);
+ background:
+ radial-gradient(1200px 800px at 10% 10%, rgba(79,209,197,0.25), transparent 55%),
+ radial-gradient(900px 700px at 95% 15%, rgba(255,79,163,0.18), transparent 55%),
+ radial-gradient(1000px 700px at 50% 110%, rgba(255,209,102,0.22), transparent 55%),
+ var(--bg);
+ min-height: 100vh;
+ }
+ a{ color: inherit; text-decoration: none; }
+ .wrap{ max-width: 1100px; margin: 0 auto; padding: 20px 18px 60px; }
+ /* Top bar */
+ .top{
+ display:flex; align-items:center; justify-content:space-between;
+ gap: 12px;
+ padding: 12px 14px;
+ background: rgba(255,255,255,0.7);
+ border: 1px solid rgba(31,41,55,0.08);
+ border-radius: 999px;
+ box-shadow: 0 6px 18px rgba(31,41,55,0.08);
+ backdrop-filter: blur(8px);
+ position: sticky;
+ top: 14px;
+ z-index: 20;
+ }
+ .brand{
+ display:flex; align-items:center; gap: 10px;
+ padding-left: 6px;
+ }
+ .logo{
+ width: 40px; height: 40px;
+ border-radius: 14px;
+ background: conic-gradient(from 210deg, var(--a), var(--d), var(--b), var(--c), var(--a));
+ box-shadow: 0 10px 18px rgba(255,79,163,0.18);
+ position: relative;
+ }
+ .logo::after{
+ content:"";
+ position:absolute; inset: 9px;
+ background: rgba(255,255,255,0.75);
+ border-radius: 10px;
+ transform: rotate(8deg);
+ }
+ .brand h1{ font-size: 16px; margin:0; line-height: 1.1; }
+ .brand p{ margin:0; font-size: 12px; color: var(--muted); }
+ nav{
+ display:flex; gap: 8px; flex-wrap: wrap;
+ justify-content: flex-end;
+ }
+ .pill{
+ padding: 10px 14px;
+ border-radius: 999px;
+ border: 1px solid rgba(31,41,55,0.10);
+ background: rgba(255,255,255,0.75);
+ font-weight: 800;
+ font-size: 13px;
+ transition: transform .08s ease, box-shadow .12s ease;
+ }
+ .pill:hover{ transform: translateY(-1px); box-shadow: 0 10px 16px rgba(31,41,55,0.10); }
+ .pill.primary{
+ border-color: transparent;
+ background: linear-gradient(135deg, var(--a), var(--d));
+ color: white;
+ }
+ /* Hero */
+ .hero{
+ margin-top: 18px;
+ padding: 28px 22px;
+ border-radius: var(--radius);
+ background: rgba(255,255,255,0.75);
+ border: 1px solid rgba(31,41,55,0.08);
+ box-shadow: var(--shadow);
+ display:grid;
+ grid-template-columns: 1.25fr 0.75fr;
+ gap: 18px;
+ align-items: center;
+ overflow:hidden;
+ position: relative;
+ }
+ .hero::before{
+ content:"";
+ position:absolute;
+ width: 520px; height: 520px;
+ background: radial-gradient(circle at 30% 30%, rgba(79,209,197,0.35), transparent 55%),
+ radial-gradient(circle at 70% 60%, rgba(255,79,163,0.25), transparent 55%);
+ right: -220px;
+ top: -230px;
+ transform: rotate(20deg);
+ pointer-events:none;
+ }
+ .hero h2{
+ margin:0 0 8px;
+ font-size: 34px;
+ letter-spacing: -0.5px;
+ line-height: 1.05;
+ }
+ .hero .sub{
+ margin:0 0 14px;
+ color: var(--muted);
+ font-size: 16px;
+ line-height: 1.5;
+ max-width: 62ch;
+ }
+ .badges{ display:flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; }
+ .badge{
+ display:inline-flex; align-items:center; gap: 8px;
+ padding: 10px 12px;
+ border-radius: 999px;
+ border: 1px solid rgba(31,41,55,0.10);
+ background: rgba(255,255,255,0.85);
+ font-weight: 900;
+ font-size: 13px;
+ }
+ .dot{ width: 10px; height: 10px; border-radius: 99px; background: var(--b); }
+ .dot.p{ background: var(--a); }
+ .dot.y{ background: var(--c); }
+ .dot.u{ background: var(--d); }
+ .heroCard{
+ border-radius: var(--radius);
+ background: linear-gradient(135deg, rgba(255,79,163,0.12), rgba(108,99,255,0.10), rgba(79,209,197,0.10));
+ border: 1px dashed rgba(31,41,55,0.14);
+ padding: 18px;
+ position: relative;
+ }
+ .heroCard h3{ margin: 0 0 8px; font-size: 18px; }
+ .heroCard p{ margin: 0 0 10px; color: var(--muted); font-size: 14px; line-height: 1.45; }
+ .kika{
+ display:flex; gap: 10px; align-items:flex-start;
+ background: rgba(255,255,255,0.75);
+ border: 1px solid rgba(31,41,55,0.10);
+ border-radius: 16px;
+ padding: 12px 12px;
+ margin-top: 10px;
+ }
+ .kikaIcon{
+ width: 34px; height: 34px; border-radius: 14px;
+ background: linear-gradient(135deg, var(--c), var(--a));
+ box-shadow: 0 10px 18px rgba(255,209,102,0.20);
+ }
+ .kika strong{ display:block; font-size: 14px; }
+ .kika span{ display:block; color: var(--muted); font-size: 12px; line-height: 1.35; }
+ /* Sections */
+ section{ scroll-margin-top: 90px; }
+ .sectionTitle{
+ display:flex; align-items:flex-end; justify-content:space-between;
+ margin: 28px 2px 12px;
+ gap: 12px;
+ }
+ .sectionTitle h3{
+ margin: 0;
+ font-size: 22px;
+ letter-spacing: -0.3px;
+ }
+ .sectionTitle p{
+ margin: 0;
+ color: var(--muted);
+ font-size: 13px;
+ max-width: 60ch;
+ text-align: right;
+ }
+ /* Filters */
+ .filters{
+ display:flex; gap: 10px; flex-wrap: wrap;
+ align-items:center;
+ padding: 12px;
+ border-radius: var(--radius);
+ background: rgba(255,255,255,0.75);
+ border: 1px solid rgba(31,41,55,0.08);
+ box-shadow: 0 6px 16px rgba(31,41,55,0.08);
+ margin-bottom: 12px;
+ }
+ .filters label{ font-weight: 900; font-size: 13px; }
+ .filters select, .filters input{
+ padding: 10px 12px;
+ border-radius: 14px;
+ border: 1px solid rgba(31,41,55,0.14);
+ background: rgba(255,255,255,0.90);
+ font: inherit;
+ font-size: 14px;
+ outline: none;
+ min-width: 190px;
+ }
+ .filters .hint{
+ color: var(--muted);
+ font-size: 12px;
+ margin-left: auto;
+ }
+ /* Product grid */
+ .grid{
+ display:grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ gap: 14px;
+ }
+ @media (max-width: 960px){ .hero{ grid-template-columns: 1fr; } .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+ @media (max-width: 620px){ .grid{ grid-template-columns: 1fr; } .filters select, .filters input{ min-width: 0; width: 100%; } .filters .hint{ margin-left: 0; width: 100%; } }
+ .card{
+ background: rgba(255,255,255,0.86);
+ border: 1px solid rgba(31,41,55,0.08);
+ border-radius: var(--radius);
+ box-shadow: var(--shadow);
+ overflow:hidden;
+ display:flex;
+ flex-direction: column;
+ min-height: 340px;
+ position: relative;
+ }
+ .sticker{
+ position:absolute;
+ top: 12px; left: 12px;
+ padding: 8px 10px;
+ border-radius: 999px;
+ font-weight: 900;
+ font-size: 12px;
+ background: rgba(255,255,255,0.85);
+ border: 1px solid rgba(31,41,55,0.10);
+ transform: rotate(-4deg);
+ }
+ .sticker.new{ box-shadow: 0 10px 14px rgba(79,209,197,0.18); }
+ .sticker.pop{ box-shadow: 0 10px 14px rgba(255,79,163,0.18); }
+ .sticker.one{ box-shadow: 0 10px 14px rgba(255,209,102,0.18); }
+ .thumb{
+ height: 160px;
+ background:
+ radial-gradient(circle at 20% 30%, rgba(255,79,163,0.18), transparent 55%),
+ radial-gradient(circle at 70% 70%, rgba(79,209,197,0.20), transparent 55%),
+ rgba(108,99,255,0.10);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding: 14px;
+ }
+ .photo{
+ width: 100%;
+ height: 100%;
+ border-radius: 18px;
+ border: 1px solid rgba(31,41,55,0.10);
+ background: rgba(255,255,255,0.75);
+ display:grid;
+ place-items:center;
+ color: rgba(31,41,55,0.65);
+ font-weight: 900;
+ font-size: 14px;
+ }
+ .body{
+ padding: 14px 14px 12px;
+ display:flex;
+ flex-direction: column;
+ gap: 10px;
+ flex:1;
+ }
+ .name{ margin:0; font-size: 18px; letter-spacing: -0.2px; }
+ .meta{ display:flex; flex-wrap:wrap; gap: 8px; }
+ .chip{
+ padding: 8px 10px;
+ border-radius: 999px;
+ background: rgba(255,255,255,0.85);
+ border: 1px solid rgba(31,41,55,0.10);
+ font-size: 12px;
+ font-weight: 900;
+ color: rgba(31,41,55,0.85);
+ }
+ .priceRow{
+ display:flex; align-items:center; justify-content: space-between;
+ gap: 12px;
+ margin-top: auto;
+ }
+ .price{
+ font-size: 18px;
+ font-weight: 900;
+ }
+ .stock{
+ font-size: 12px;
+ font-weight: 900;
+ color: rgba(31,41,55,0.75);
+ background: rgba(79,209,197,0.18);
+ border: 1px solid rgba(79,209,197,0.25);
+ padding: 7px 10px;
+ border-radius: 999px;
+ }
+ .actions{
+ display:flex;
+ gap: 10px;
+ margin-top: 10px;
+ }
+ .btn{
+ flex: 1;
+ display:inline-flex; justify-content:center; align-items:center; gap: 8px;
+ padding: 12px 12px;
+ border-radius: 16px;
+ border: 1px solid rgba(31,41,55,0.12);
+ background: rgba(255,255,255,0.90);
+ font-weight: 900;
+ cursor: pointer;
+ transition: transform .08s ease, box-shadow .12s ease;
+ text-align:center;
+ }
+ .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 16px rgba(31,41,55,0.10); }
+ .btn.primary{
+ border: none;
+ color: white;
+ background: linear-gradient(135deg, var(--a), var(--d));
+ }
+ .btn.secondary{
+ border: none;
+ background: linear-gradient(135deg, rgba(79,209,197,0.35), rgba(255,209,102,0.35));
+ }
+ /* Info blocks */
+ .infoGrid{
+ display:grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ gap: 14px;
+ margin-top: 12px;
+ }
+ @media (max-width: 960px){ .infoGrid{ grid-template-columns: 1fr; } }
+ .info{
+ padding: 16px;
+ border-radius: var(--radius);
+ background: rgba(255,255,255,0.80);
+ border: 1px solid rgba(31,41,55,0.08);
+ box-shadow: 0 10px 22px rgba(31,41,55,0.08);
+ }
+ .info h4{ margin:0 0 8px; font-size: 16px; }
+ .info p{ margin:0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+ /* Footer */
+ footer{
+ margin-top: 26px;
+ padding: 18px;
+ border-radius: var(--radius);
+ background: rgba(255,255,255,0.70);
+ border: 1px solid rgba(31,41,55,0.08);
+ color: var(--muted);
+ font-size: 13px;
+ display:flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .smallLink{
+ font-weight: 900;
+ color: rgba(31,41,55,0.70);
+ border-bottom: 2px dotted rgba(31,41,55,0.18);
+ padding-bottom: 2px;
+ }
+ /* Dialog (product detail) */
+ dialog{
+ border: none;
+ border-radius: 22px;
+ box-shadow: 0 30px 70px rgba(31,41,55,0.30);
+ width: min(680px, calc(100% - 26px));
+ padding: 0;
+ overflow:hidden;
+ }
+ dialog::backdrop{
+ background: rgba(17,24,39,0.55);
+ backdrop-filter: blur(3px);
+ }
+ .dlgHead{
+ padding: 16px 16px 12px;
+ background: rgba(255,255,255,0.92);
+ border-bottom: 1px solid rgba(31,41,55,0.08);
+ display:flex;
+ justify-content: space-between;
+ gap: 10px;
+ align-items:center;
+ }
+ .dlgHead strong{ font-size: 16px; }
+ .x{
+ border: 1px solid rgba(31,41,55,0.14);
+ background: rgba(255,255,255,0.95);
+ border-radius: 14px;
+ padding: 8px 10px;
+ font-weight: 900;
+ cursor:pointer;
+ }
+ .dlgBody{
+ padding: 16px;
+ background:
+ radial-gradient(500px 300px at 15% 20%, rgba(79,209,197,0.20), transparent 55%),
+ radial-gradient(500px 300px at 85% 10%, rgba(255,79,163,0.18), transparent 55%),
+ rgba(255,255,255,0.92);
+ }
+ .dlgCols{
+ display:grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 14px;
+ align-items: start;
+ }
+ @media (max-width: 720px){ .dlgCols{ grid-template-columns: 1fr; } }
+ .dlgPhoto{
+ height: 220px;
+ border-radius: 18px;
+ border: 1px solid rgba(31,41,55,0.10);
+ background: rgba(255,255,255,0.75);
+ display:grid;
+ place-items:center;
+ font-weight: 900;
+ color: rgba(31,41,55,0.65);
+ }
+ .dlgText p{ margin: 0 0 10px; color: var(--muted); line-height: 1.5; }
+ .dlgText .chips{ display:flex; flex-wrap:wrap; gap: 8px; margin: 10px 0 12px; }
+ .dlgFoot{
+ padding: 14px 16px;
+ background: rgba(255,255,255,0.92);
+ border-top: 1px solid rgba(31,41,55,0.08);
+ display:flex;
+ gap: 10px;
+ }
+ </style>
+</head>
+<body>
+ <div class="wrap">
+ <header class="top">
+ <div class="brand" aria-label="Evi's poppenkleren">
+ <div class="logo" aria-hidden="true"></div>
+ <div>
+ <h1>Evi's poppenkleren</h1>
+ <p>Handgemaakt • Opbrengst voor KiKa</p>
+ </div>
+ </div>
+ <nav aria-label="Hoofdmenu">
+ <a class="pill" href="#shop">Shop</a>
+ <a class="pill" href="#goede-doel">Goede doel</a>
+ <a class="pill" href="#contact">Contact</a>
+ <a class="pill primary" href="#shop">Bestel</a>
+ </nav>
+ </header>
+ <main>
+ <section class="hero" aria-label="Intro">
+ <div>
+ <h2>Vrolijke poppenkleren, met liefde gemaakt</h2>
+ <p class="sub">
+ Evi maakt handgemaakte poppenkleren in verschillende maten. Jij kiest iets leuks,
+ wij bevestigen per e-mail, en de opbrengst gaat naar <strong>KiKa</strong>.
+ </p>
+ <div class="badges" aria-label="Highlights">
+ <div class="badge"><span class="dot p"></span> Bestellen via e-mail</div>
+ <div class="badge"><span class="dot y"></span> Verzenden of afhalen</div>
+ <div class="badge"><span class="dot u"></span> Verschillende poppenmaten</div>
+ <div class="badge"><span class="dot"></span> Alles handgemaakt</div>
+ </div>
+ </div>
+ <aside class="heroCard" aria-label="KiKa kaart">
+ <h3>Goed doel: KiKa</h3>
+ <p>
+ Met elke aankoop help je mee. We houden het simpel en duidelijk:
+ jij bestelt via e-mail, wij bevestigen, en daarna verzenden of afhalen.
+ </p>
+ <div class="kika">
+ <div class="kikaIcon" aria-hidden="true"></div>
+ <div>
+ <strong>Opbrengst naar KiKa</strong>
+ <span>We kunnen later een “teller” toevoegen: hoeveel er al is opgehaald.</span>
+ </div>
+ </div>
+ </aside>
+ </section>
+ <section id="shop" aria-label="Shop">
+ <div class="sectionTitle">
+ <h3>Shop</h3>
+ <p>Klik op een item voor details of bestel direct via e-mail.</p>
+ </div>
+ <div class="filters" aria-label="Filters">
+ <div>
+ <label for="sizeFilter">Poppenmaat</label>
+ <select id="sizeFilter">
+ <option value="all">Alles</option>
+ <option value="barbie">Barbie / 29 cm</option>
+ <option value="babyborn">Baby Born / 43 cm</option>
+ <option value="30cm">Pop 30 cm</option>
+ <option value="36cm">Pop 36 cm</option>
+ </select>
+ </div>
+ <div>
+ <label for="searchBox">Zoeken</label>
+ <input id="searchBox" type="search" placeholder="Bijv. jurkje, trui, set, winter..." />
+ </div>
+ <div class="hint">Tip: vervang later de “Foto” blokken door echte foto’s.</div>
+ </div>
+ <div class="grid" id="productGrid" aria-label="Producten">
+ <!-- Products (data-* used for filter and mail content) -->
+ <article class="card" data-size="barbie" data-name="Zomerjurkje Bloemetjes" data-code="EVI-001" data-price="€ 6,00" data-stock="1" data-notes="Past op Barbie / 29 cm. Licht, vrolijk jurkje.">
+ <div class="sticker new">Nieuw</div>
+ <div class="thumb"><div class="photo">Foto</div></div>
+ <div class="body">
+ <h4 class="name">Zomerjurkje Bloemetjes</h4>
+ <div class="meta">
+ <span class="chip">Barbie / 29 cm</span>
+ <span class="chip">Handgemaakt</span>
+ <span class="chip">Item: EVI-001</span>
+ </div>
+ <div class="priceRow">
+ <div class="price">€ 6,00</div>
+ <div class="stock">1 op voorraad</div>
+ </div>
+ <div class="actions">
+ <button class="btn secondary" data-action="details">Details</button>
+ <button class="btn primary" data-action="order">Bestel via e-mail</button>
+ </div>
+ </div>
+ </article>
+ <article class="card" data-size="babyborn" data-name="Pyjama Set Sterren" data-code="EVI-002" data-price="€ 9,50" data-stock="2" data-notes="Past op Baby Born / 43 cm. Zachte pyjama met sterren.">
+ <div class="sticker pop">Populair</div>
+ <div class="thumb"><div class="photo">Foto</div></div>
+ <div class="body">
+ <h4 class="name">Pyjama Set Sterren</h4>
+ <div class="meta">
+ <span class="chip">Baby Born / 43 cm</span>
+ <span class="chip">Handgemaakt</span>
+ <span class="chip">Item: EVI-002</span>
+ </div>
+ <div class="priceRow">
+ <div class="price">€ 9,50</div>
+ <div class="stock">2 op voorraad</div>
+ </div>
+ <div class="actions">
+ <button class="btn secondary" data-action="details">Details</button>
+ <button class="btn primary" data-action="order">Bestel via e-mail</button>
+ </div>
+ </div>
+ </article>
+ <article class="card" data-size="30cm" data-name="Trui + Rok Set (Winter)" data-code="EVI-003" data-price="€ 8,00" data-stock="1" data-notes="Voor pop 30 cm. Warme trui met bijpassend rokje.">
+ <div class="sticker one">Laatste</div>
+ <div class="thumb"><div class="photo">Foto</div></div>
+ <div class="body">
+ <h4 class="name">Trui + Rok Set (Winter)</h4>
+ <div class="meta">
+ <span class="chip">Pop 30 cm</span>
+ <span class="chip">Handgemaakt</span>
+ <span class="chip">Item: EVI-003</span>
+ </div>
+ <div class="priceRow">
+ <div class="price">€ 8,00</div>
+ <div class="stock">1 op voorraad</div>
+ </div>
+ <div class="actions">
+ <button class="btn secondary" data-action="details">Details</button>
+ <button class="btn primary" data-action="order">Bestel via e-mail</button>
+ </div>
+ </div>
+ </article>
+ <article class="card" data-size="36cm" data-name="Regenjas met Kap" data-code="EVI-004" data-price="€ 10,00" data-stock="op bestelling" data-notes="Voor pop 36 cm. Regenjas met kapje. Op bestelling mogelijk.">
+ <div class="sticker new">Nieuw</div>
+ <div class="thumb"><div class="photo">Foto</div></div>
+ <div class="body">
+ <h4 class="name">Regenjas met Kap</h4>
+ <div class="meta">
+ <span class="chip">Pop 36 cm</span>
+ <span class="chip">Handgemaakt</span>
+ <span class="chip">Item: EVI-004</span>
+ </div>
+ <div class="priceRow">
+ <div class="price">€ 10,00</div>
+ <div class="stock">Op bestelling</div>
+ </div>
+ <div class="actions">
+ <button class="btn secondary" data-action="details">Details</button>
+ <button class="btn primary" data-action="order">Bestel via e-mail</button>
+ </div>
+ </div>
+ </article>
+ <article class="card" data-size="barbie" data-name="Feestjurkje Glitter" data-code="EVI-005" data-price="€ 7,50" data-stock="1" data-notes="Past op Barbie / 29 cm. Feestjurkje met glitteraccent.">
+ <div class="sticker pop">Populair</div>
+ <div class="thumb"><div class="photo">Foto</div></div>
+ <div class="body">
+ <h4 class="name">Feestjurkje Glitter</h4>
+ <div class="meta">
+ <span class="chip">Barbie / 29 cm</span>
+ <span class="chip">Handgemaakt</span>
+ <span class="chip">Item: EVI-005</span>
+ </div>
+ <div class="priceRow">
+ <div class="price">€ 7,50</div>
+ <div class="stock">1 op voorraad</div>
+ </div>
+ <div class="actions">
+ <button class="btn secondary" data-action="details">Details</button>
+ <button class="btn primary" data-action="order">Bestel via e-mail</button>
+ </div>
+ </div>
+ </article>
+ <article class="card" data-size="babyborn" data-name="Zomer Set (Top + Short)" data-code="EVI-006" data-price="€ 11,00" data-stock="1" data-notes="Past op Baby Born / 43 cm. Zomerse set met top en short.">
+ <div class="sticker new">Nieuw</div>
+ <div class="thumb"><div class="photo">Foto</div></div>
+ <div class="body">
+ <h4 class="name">Zomer Set (Top + Short)</h4>
+ <div class="meta">
+ <span class="chip">Baby Born / 43 cm</span>
+ <span class="chip">Handgemaakt</span>
+ <span class="chip">Item: EVI-006</span>
+ </div>
+ <div class="priceRow">
+ <div class="price">€ 11,00</div>
+ <div class="stock">1 op voorraad</div>
+ </div>
+ <div class="actions">
+ <button class="btn secondary" data-action="details">Details</button>
+ <button class="btn primary" data-action="order">Bestel via e-mail</button>
+ </div>
+ </div>
+ </article>
+ </div>
+ <div class="infoGrid" aria-label="Hoe werkt bestellen">
+ <div class="info">
+ <h4>1) Kies een item</h4>
+ <p>Klik op “Bestel via e-mail”. Je e-mail wordt automatisch ingevuld met itemnummer en details.</p>
+ </div>
+ <div class="info">
+ <h4>2) We bevestigen per e-mail</h4>
+ <p>We laten weten of het item nog beschikbaar is en spreken betaling en verzenden/afhalen af.</p>
+ </div>
+ <div class="info">
+ <h4>3) Verzenden of afhalen</h4>
+ <p>Je kunt het pakketje laten verzenden of afhalen op afspraak. Opbrengst gaat naar KiKa.</p>
+ </div>
+ </div>
+ </section>
+ <section id="goede-doel" aria-label="Goede doel">
+ <div class="sectionTitle">
+ <h3>Goede doel: KiKa</h3>
+ <p>Hier kun je later makkelijk een foto, update-tekst en een “opgehaald bedrag” plaatsen.</p>
+ </div>
+ <div class="infoGrid">
+ <div class="info">
+ <h4>Waarom KiKa?</h4>
+ <p>Evi wil met haar poppenkleren iets goeds doen. Daarom gaat de opbrengst naar KiKa.</p>
+ </div>
+ <div class="info">
+ <h4>Transparant</h4>
+ <p>We kunnen (als je wilt) periodiek een korte update plaatsen: hoeveel bestellingen en hoeveel opgehaald.</p>
+ </div>
+ <div class="info">
+ <h4>Dankjewel</h4>
+ <p>Iedere bestelling helpt. Bedankt dat je meedoet.</p>
+ </div>
+ </div>
+ </section>
+ <section id="contact" aria-label="Contact">
+ <div class="sectionTitle">
+ <h3>Contact</h3>
+ <p>Bestellen gaat via e-mail. Het e-mailadres voeg je straks eenvoudig toe.</p>
+ </div>
+ <div class="infoGrid">
+ <div class="info">
+ <h4>Bestellen</h4>
+ <p>
+ Klik in de shop op “Bestel via e-mail”.
+ Je kunt later het echte mailadres invullen (nu staat er een placeholder).
+ </p>
+ </div>
+ <div class="info">
+ <h4>Verzenden & afhalen</h4>
+ <p>We verzenden in Nederland (en afhalen kan op afspraak). Kosten en afspraken bevestigen we per e-mail.</p>
+ </div>
+ <div class="info">
+ <h4>Veelgestelde vragen</h4>
+ <p>
+ Past het op mijn pop? Stuur gerust een foto of vertel de lengte van de pop. Dan helpen we je kiezen.
+ </p>
+ </div>
+ </div>
+ </section>
+ <footer>
+ <div>© <span id="year"></span> Evi's poppenkleren • Handgemaakt • Opbrengst voor KiKa</div>
+ <div>
+ <a class="smallLink" href="#shop">Naar de shop</a>
+ &nbsp;·&nbsp;
+ <a class="smallLink" href="#goede-doel">Goede doel</a>
+ &nbsp;·&nbsp;
+ <a class="smallLink" href="#contact">Contact</a>
+ </div>
+ </footer>
+ </main>
+ </div>
+ <!-- Product detail dialog -->
+ <dialog id="dlg">
+ <div class="dlgHead">
+ <strong id="dlgTitle">Product</strong>
+ <button class="x" id="dlgClose" aria-label="Sluiten">Sluiten</button>
+ </div>
+ <div class="dlgBody">
+ <div class="dlgCols">
+ <div class="dlgPhoto" id="dlgPhoto">Foto</div>
+ <div class="dlgText">
+ <p id="dlgDesc"></p>
+ <div class="chips" id="dlgChips"></div>
+ <p style="margin-top:10px;">
+ <strong>Bestellen:</strong> klik op de knop hieronder. We bevestigen per e-mail (verzenden of afhalen).
+ </p>
+ </div>
+ </div>
+ </div>
+ <div class="dlgFoot">
+ <button class="btn secondary" id="dlgOrder2">Bestel via e-mail</button>
+ <button class="btn" id="dlgClose2">Sluiten</button>
+ </div>
+ </dialog>
+ <script>
+ // === 1) VERVANG HIER LATER HET ECHTE E-MAILADRES ===
+ const SHOP_EMAIL = "EMAIL_HIER@VOORBEELD.NL";
+ const sizeFilter = document.getElementById("sizeFilter");
+ const searchBox = document.getElementById("searchBox");
+ const grid  = document.getElementById("productGrid");
+ const cards = Array.from(grid.querySelectorAll(".card"));
+ document.getElementById("year").textContent = new Date().getFullYear();
+ // Filtering
+ function applyFilters(){
+ const size = sizeFilter.value;
+ const q = (searchBox.value || "").trim().toLowerCase();
+ cards.forEach(card => {
+ const matchesSize = (size === "all") || (card.dataset.size === size);
+ const hay = (
+ card.dataset.name + " " +
+ card.dataset.code + " " +
+ card.dataset.notes + " " +
+ card.dataset.size
+ ).toLowerCase();
+ const matchesSearch = !q || hay.includes(q);
+ card.style.display = (matchesSize && matchesSearch) ? "" : "none";
+ });
+ }
+ sizeFilter.addEventListener("change", applyFilters);
+ searchBox.addEventListener("input", applyFilters);
+ // Mailto builder
+ function orderMailto(card){
+ const name = card.dataset.name;
+ const code = card.dataset.code;
+ const price = card.dataset.price;
+ const stock = card.dataset.stock;
+ const size = humanSize(card.dataset.size);
+ const notes = card.dataset.notes;
+ const subject = `Bestelling – ${code} – ${name}`;
+ const body =
+`Hallo,
+Ik wil graag dit item bestellen/reserveren:
+- Item: ${name}
+- Itemnummer: ${code}
+- Poppenmaat: ${size}
+- Prijs: ${price}
+- Voorraad: ${stock}
+- Info: ${notes}
+Mijn gegevens:
+- Naam:
+- Telefoon (optioneel):
+- Verzenden of afhalen: (kies)
+- Adres (alleen bij verzenden):
+- Opmerkingen:
+Dankjewel!
+`;
+ const url = `mailto:${encodeURIComponent(SHOP_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+ return url;
+ }
+ function humanSize(key){
+ switch(key){
+ case "barbie": return "Barbie / 29 cm";
+ case "babyborn": return "Baby Born / 43 cm";
+ case "30cm": return "Pop 30 cm";
+ case "36cm": return "Pop 36 cm";
+ default: return "Verschillend";
+ }
+ }
+ // Dialog (details)
+ const dlg = document.getElementById("dlg");
+ const dlgTitle = document.getElementById("dlgTitle");
+ const dlgDesc = document.getElementById("dlgDesc");
+ const dlgChips = document.getElementById("dlgChips");
+ const dlgOrder2 = document.getElementById("dlgOrder2");
+ const dlgClose = document.getElementById("dlgClose");
+ const dlgClose2 = document.getElementById("dlgClose2");
+ let currentCard = null;
+ function openDetails(card){
+ currentCard = card;
+ dlgTitle.textContent = `${card.dataset.name} (${card.dataset.code})`;
+ dlgDesc.textContent = card.dataset.notes;
+ dlgChips.innerHTML = "";
+ const chipList = [
+ humanSize(card.dataset.size),
+ "Handgemaakt",
+ `Prijs: ${card.dataset.price}`,
+ `Voorraad: ${card.dataset.stock}`
+ ];
+ chipList.forEach(t => {
+ const s = document.createElement("span");
+ s.className = "chip";
+ s.textContent = t;
+ dlgChips.appendChild(s);
+ });
+ dlgOrder2.onclick = () => { window.location.href = orderMailto(card); };
+ dlg.showModal();
+ }
+ function closeDialog(){ dlg.close(); currentCard = null; }
+ dlgClose.addEventListener("click", closeDialog);
+ dlgClose2.addEventListener("click", closeDialog);
+ // Card actions
+ grid.addEventListener("click", (e) => {
+ const btn = e.target.closest("button");
+ if(!btn) return;
+ const card = e.target.closest(".card");
+ if(!card) return;
+ const action = btn.dataset.action;
+ if(action === "details") openDetails(card);
+ if(action === "order") window.location.href = orderMailto(card);
+ });
+ // Close dialog on Escape already supported. Also close when clicking backdrop (optional).
+ dlg.addEventListener("click", (e) => {
+ const rect = dlg.getBoundingClientRect();
+ const inDialog = (rect.top <= e.clientY && e.clientY <= rect.bottom && rect.left <= e.clientX && e.clientX <= rect.right);
+ if(!inDialog) closeDialog();
+ });
+ </script>
+</body>
+</html>
