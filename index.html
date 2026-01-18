@@ -1,12 +1,967 @@
-<!doctype html>
-<html lang="nl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TEST</title>
-  </head>
-  <body>
-    <h1>TEST: dit is de website</h1>
-    <p>Als je dit normaal ziet (zonder code), dan werkt GitHub Pages goed.</p>
-  </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  
+    /* modal */
+    .modal{ position: fixed; inset: 0; display:none; z-index: 200; }
+    .modal[aria-hidden="false"]{ display:block; }
+    .modalOverlay{ position:absolute; inset:0; background: rgba(47,42,37,0.45); backdrop-filter: blur(4px); }
+    .modalCard{
+      position: relative;
+      margin: 5vh auto;
+      width: min(980px, calc(100% - 24px));
+      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(47,42,37,0.14);
+      border-radius: 26px;
+      box-shadow: 0 30px 80px rgba(47,42,37,0.30);
+      overflow:hidden;
+    }
+    .modalClose{
+      position:absolute; top: 10px; right: 12px;
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(47,42,37,0.14);
+      background: rgba(255,255,255,0.92);
+      font-size: 26px;
+      font-weight: 900;
+      cursor:pointer;
+    }
+    .modalGrid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 0; }
+    @media (max-width: 860px){ .modalGrid{ grid-template-columns: 1fr; } .modalCard{ margin: 10px auto; } }
+    .modalMedia{ background: rgba(243,197,148,0.10); padding: 16px; }
+    .modalMedia img{
+      width: 100%;
+      height: min(520px, 55vh);
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid rgba(47,42,37,0.10);
+      background: rgba(255,255,255,0.75);
+    }
+    .modalBody{ padding: 18px; display:flex; flex-direction: column; gap: 12px; }
+    .modalTitle{ margin:0; font-size: 22px; letter-spacing: -0.2px; }
+    .modalMeta{ display:flex; flex-wrap: wrap; gap: 8px; }
+    .modalPrice{ font-size: 22px; font-weight: 900; }
+    .modalActions{ display:flex; gap: 10px; flex-wrap: wrap; }
+    .modalActions .btn{ flex: 1 1 220px; }
+    .modalHint{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="nl"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Evi's poppenkleren&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Handgemaakte poppenkleren. Opbrengst voor KiKa. Bestellen via e-mail." /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Friendly rounded font --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg: #fff6ff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--paper: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--ink: #1f2937;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted: #6b7280;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>--a: #ff4fa3; <span class="Apple-converted-space">    </span>/* accent pink */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--b: #4fd1c5; <span class="Apple-converted-space">    </span>/* mint */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--c: #ffd166; <span class="Apple-converted-space">    </span>/* sunny */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--d: #6c63ff; <span class="Apple-converted-space">    </span>/* purple */</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>--shadow: 0 10px 25px rgba(31,41,55,0.12);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--radius: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>*{ box-sizing: border-box; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--ink);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(1200px 800px at 10% 10%, rgba(79,209,197,0.25), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(900px 700px at 95% 15%, rgba(255,79,163,0.18), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(1000px 700px at 50% 110%, rgba(255,209,102,0.22), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>a{ color: inherit; text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.wrap{ max-width: 1100px; margin: 0 auto; padding: 20px 18px 60px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Top bar */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.top{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:center; justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.7);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 6px 18px rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(8px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 20;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:center; gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logo{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 40px; height: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: conic-gradient(from 210deg, var(--a), var(--d), var(--b), var(--c), var(--a));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 18px rgba(255,79,163,0.18);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logo::after{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content:"";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position:absolute; inset: 9px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: rotate(8deg);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand h1{ font-size: 16px; margin:0; line-height: 1.1; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand p{ margin:0; font-size: 12px; color: var(--muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>nav{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; gap: 8px; flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: flex-end;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.pill{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: transform .08s ease, box-shadow .12s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.pill:hover{ transform: translateY(-1px); box-shadow: 0 10px 16px rgba(31,41,55,0.10); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.pill.primary{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--a), var(--d));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Hero */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 28px 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1.25fr 0.75fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero::before{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content:"";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position:absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 520px; height: 520px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: radial-gradient(circle at 30% 30%, rgba(79,209,197,0.35), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>radial-gradient(circle at 70% 60%, rgba(255,79,163,0.25), transparent 55%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: -220px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: -230px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: rotate(20deg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pointer-events:none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero h2{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0 0 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 34px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.05;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero .sub{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0 0 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 62ch;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.badges{ display:flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.badge{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-flex; align-items:center; gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.85);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dot{ width: 10px; height: 10px; border-radius: 99px; background: var(--b); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dot.p{ background: var(--a); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dot.y{ background: var(--c); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dot.u{ background: var(--d); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.heroCard{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, rgba(255,79,163,0.12), rgba(108,99,255,0.10), rgba(79,209,197,0.10));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px dashed rgba(31,41,55,0.14);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.heroCard h3{ margin: 0 0 8px; font-size: 18px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.heroCard p{ margin: 0 0 10px; color: var(--muted); font-size: 14px; line-height: 1.45; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kika{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; gap: 10px; align-items:flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kikaIcon{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 34px; height: 34px; border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--c), var(--a));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 18px rgba(255,209,102,0.20);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kika strong{ display:block; font-size: 14px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kika span{ display:block; color: var(--muted); font-size: 12px; line-height: 1.35; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Sections */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>section{ scroll-margin-top: 90px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sectionTitle{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:flex-end; justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 28px 2px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sectionTitle h3{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.3px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sectionTitle p{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 60ch;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: right;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Filters */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.filters{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; gap: 10px; flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 6px 16px rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.filters label{ font-weight: 900; font-size: 13px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.filters select, .filters input{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.14);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.90);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-width: 190px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.filters .hint{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-left: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Product grid */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.grid{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(3, minmax(0, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 960px){ .hero{ grid-template-columns: 1fr; } .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 620px){ .grid{ grid-template-columns: 1fr; } .filters select, .filters input{ min-width: 0; width: 100%; } .filters .hint{ margin-left: 0; width: 100%; } }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.86);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 340px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sticker{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position:absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 12px; left: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.85);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: rotate(-4deg);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sticker.new{ box-shadow: 0 10px 14px rgba(79,209,197,0.18); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sticker.pop{ box-shadow: 0 10px 14px rgba(255,79,163,0.18); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sticker.one{ box-shadow: 0 10px 14px rgba(255,209,102,0.18); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.thumb{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 160px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(circle at 20% 30%, rgba(255,79,163,0.18), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(circle at 70% 70%, rgba(79,209,197,0.20), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rgba(108,99,255,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.photo{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>place-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(31,41,55,0.65);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.body{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 14px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex:1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.name{ margin:0; font-size: 18px; letter-spacing: -0.2px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.meta{ display:flex; flex-wrap:wrap; gap: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chip{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.85);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(31,41,55,0.85);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.priceRow{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:center; justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.price{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stock{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(31,41,55,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(79,209,197,0.18);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(79,209,197,0.25);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 7px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.actions{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-flex; justify-content:center; align-items:center; gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.12);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.90);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: transform .08s ease, box-shadow .12s ease;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 16px rgba(31,41,55,0.10); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn.primary{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--a), var(--d));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn.secondary{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, rgba(79,209,197,0.35), rgba(255,209,102,0.35));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Info blocks */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.infoGrid{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(3, minmax(0, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 960px){ .infoGrid{ grid-template-columns: 1fr; } }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.info{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.80);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 22px rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.info h4{ margin:0 0 8px; font-size: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.info p{ margin:0; color: var(--muted); font-size: 14px; line-height: 1.5; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Footer */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 26px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.70);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.smallLink{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(31,41,55,0.70);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 2px dotted rgba(31,41,55,0.18);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-bottom: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Dialog (product detail) */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>dialog{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 30px 70px rgba(31,41,55,0.30);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: min(680px, calc(100% - 26px));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>dialog::backdrop{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(17,24,39,0.55);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(3px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dlgHead{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px 16px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.92);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dlgHead strong{ font-size: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.x{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.14);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.95);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dlgBody{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(500px 300px at 15% 20%, rgba(79,209,197,0.20), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(500px 300px at 85% 10%, rgba(255,79,163,0.18), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rgba(255,255,255,0.92);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dlgCols{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: start;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 720px){ .dlgCols{ grid-template-columns: 1fr; } }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dlgPhoto{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 220px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(31,41,55,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>place-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(31,41,55,0.65);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dlgText p{ margin: 0 0 10px; color: var(--muted); line-height: 1.5; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dlgText .chips{ display:flex; flex-wrap:wrap; gap: 8px; margin: 10px 0 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.dlgFoot{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.92);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(31,41,55,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand" aria-label="Evi's poppenkleren"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="logo" aria-hidden="true"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1&gt;Evi's poppenkleren&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Handgemaakt • Opbrengst voor KiKa&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav aria-label="Hoofdmenu"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="pill" href="#shop"&gt;Shop&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="pill" href="#goede-doel"&gt;Goede doel&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="pill" href="#contact"&gt;Contact&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="pill primary" href="#shop"&gt;Bestel&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="hero" aria-label="Intro"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Vrolijke poppenkleren, met liefde gemaakt&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Evi maakt handgemaakte poppenkleren in verschillende maten. Jij kiest iets leuks,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>wij bevestigen per e-mail, en de opbrengst gaat naar &lt;strong&gt;KiKa&lt;/strong&gt;.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="badges" aria-label="Highlights"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="badge"&gt;&lt;span class="dot p"&gt;&lt;/span&gt; Bestellen via e-mail&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="badge"&gt;&lt;span class="dot y"&gt;&lt;/span&gt; Verzenden of afhalen&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="badge"&gt;&lt;span class="dot u"&gt;&lt;/span&gt; Verschillende poppenmaten&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="badge"&gt;&lt;span class="dot"&gt;&lt;/span&gt; Alles handgemaakt&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;aside class="heroCard" aria-label="KiKa kaart"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Goed doel: KiKa&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Met elke aankoop help je mee. We houden het simpel en duidelijk:</p>
+<p class="p1"><span class="Apple-converted-space">            </span>jij bestelt via e-mail, wij bevestigen, en daarna verzenden of afhalen.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kika"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kikaIcon" aria-hidden="true"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;strong&gt;Opbrengst naar KiKa&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;We kunnen later een “teller” toevoegen: hoeveel er al is opgehaald.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/aside&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="shop" aria-label="Shop"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="sectionTitle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Shop&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Klik op een item voor details of bestel direct via e-mail.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="filters" aria-label="Filters"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="sizeFilter"&gt;Poppenmaat&lt;/label&gt;&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="sizeFilter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="all"&gt;Alles&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="barbie"&gt;Barbie / 29 cm&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="babyborn"&gt;Baby Born / 43 cm&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="30cm"&gt;Pop 30 cm&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="36cm"&gt;Pop 36 cm&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="searchBox"&gt;Zoeken&lt;/label&gt;&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="searchBox" type="search" placeholder="Bijv. jurkje, trui, set, winter..." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hint"&gt;Tip: vervang later de “Foto” blokken door echte foto’s.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid" id="productGrid" aria-label="Producten"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Products (data-* used for filter and mail content) --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="card" data-size="barbie" data-name="Zomerjurkje Bloemetjes" data-code="EVI-001" data-price="€ 6,00" data-stock="1" data-notes="Past op Barbie / 29 cm. Licht, vrolijk jurkje."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="sticker new"&gt;Nieuw&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="thumb"&gt;&lt;div class="photo"&gt;Foto&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4 class="name"&gt;Zomerjurkje Bloemetjes&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Barbie / 29 cm&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Handgemaakt&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Item: EVI-001&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="priceRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;€ 6,00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stock"&gt;1 op voorraad&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn secondary" data-action="details"&gt;Details&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn primary" data-action="order"&gt;Bestel via e-mail&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/article&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="card" data-size="babyborn" data-name="Pyjama Set Sterren" data-code="EVI-002" data-price="€ 9,50" data-stock="2" data-notes="Past op Baby Born / 43 cm. Zachte pyjama met sterren."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="sticker pop"&gt;Populair&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="thumb"&gt;&lt;div class="photo"&gt;Foto&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4 class="name"&gt;Pyjama Set Sterren&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Baby Born / 43 cm&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Handgemaakt&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Item: EVI-002&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="priceRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;€ 9,50&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stock"&gt;2 op voorraad&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn secondary" data-action="details"&gt;Details&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn primary" data-action="order"&gt;Bestel via e-mail&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/article&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="card" data-size="30cm" data-name="Trui + Rok Set (Winter)" data-code="EVI-003" data-price="€ 8,00" data-stock="1" data-notes="Voor pop 30 cm. Warme trui met bijpassend rokje."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="sticker one"&gt;Laatste&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="thumb"&gt;&lt;div class="photo"&gt;Foto&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4 class="name"&gt;Trui + Rok Set (Winter)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Pop 30 cm&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Handgemaakt&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Item: EVI-003&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="priceRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;€ 8,00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stock"&gt;1 op voorraad&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn secondary" data-action="details"&gt;Details&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn primary" data-action="order"&gt;Bestel via e-mail&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/article&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="card" data-size="36cm" data-name="Regenjas met Kap" data-code="EVI-004" data-price="€ 10,00" data-stock="op bestelling" data-notes="Voor pop 36 cm. Regenjas met kapje. Op bestelling mogelijk."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="sticker new"&gt;Nieuw&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="thumb"&gt;&lt;div class="photo"&gt;Foto&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4 class="name"&gt;Regenjas met Kap&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Pop 36 cm&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Handgemaakt&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Item: EVI-004&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="priceRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;€ 10,00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stock"&gt;Op bestelling&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn secondary" data-action="details"&gt;Details&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn primary" data-action="order"&gt;Bestel via e-mail&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/article&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="card" data-size="barbie" data-name="Feestjurkje Glitter" data-code="EVI-005" data-price="€ 7,50" data-stock="1" data-notes="Past op Barbie / 29 cm. Feestjurkje met glitteraccent."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="sticker pop"&gt;Populair&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="thumb"&gt;&lt;div class="photo"&gt;Foto&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4 class="name"&gt;Feestjurkje Glitter&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Barbie / 29 cm&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Handgemaakt&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Item: EVI-005&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="priceRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;€ 7,50&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stock"&gt;1 op voorraad&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn secondary" data-action="details"&gt;Details&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn primary" data-action="order"&gt;Bestel via e-mail&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/article&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="card" data-size="babyborn" data-name="Zomer Set (Top + Short)" data-code="EVI-006" data-price="€ 11,00" data-stock="1" data-notes="Past op Baby Born / 43 cm. Zomerse set met top en short."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="sticker new"&gt;Nieuw&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="thumb"&gt;&lt;div class="photo"&gt;Foto&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4 class="name"&gt;Zomer Set (Top + Short)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Baby Born / 43 cm&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Handgemaakt&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Item: EVI-006&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="priceRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;€ 11,00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stock"&gt;1 op voorraad&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn secondary" data-action="details"&gt;Details&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn primary" data-action="order"&gt;Bestel via e-mail&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/article&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="infoGrid" aria-label="Hoe werkt bestellen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;1) Kies een item&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Klik op “Bestel via e-mail”. Je e-mail wordt automatisch ingevuld met itemnummer en details.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;2) We bevestigen per e-mail&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;We laten weten of het item nog beschikbaar is en spreken betaling en verzenden/afhalen af.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;3) Verzenden of afhalen&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Je kunt het pakketje laten verzenden of afhalen op afspraak. Opbrengst gaat naar KiKa.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="goede-doel" aria-label="Goede doel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="sectionTitle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Goede doel: KiKa&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Hier kun je later makkelijk een foto, update-tekst en een “opgehaald bedrag” plaatsen.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="infoGrid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Waarom KiKa?&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Evi wil met haar poppenkleren iets goeds doen. Daarom gaat de opbrengst naar KiKa.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Transparant&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;We kunnen (als je wilt) periodiek een korte update plaatsen: hoeveel bestellingen en hoeveel opgehaald.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Dankjewel&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Iedere bestelling helpt. Bedankt dat je meedoet.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="contact" aria-label="Contact"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="sectionTitle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Contact&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Bestellen gaat via e-mail. Het e-mailadres voeg je straks eenvoudig toe.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="infoGrid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Bestellen&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Klik in de shop op “Bestel via e-mail”.</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Je kunt later het echte mailadres invullen (nu staat er een placeholder).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Verzenden &amp; afhalen&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;We verzenden in Nederland (en afhalen kan op afspraak). Kosten en afspraken bevestigen we per e-mail.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Veelgestelde vragen&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Past het op mijn pop? Stuur gerust een foto of vertel de lengte van de pop. Dan helpen we je kiezen.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;© &lt;span id="year"&gt;&lt;/span&gt; Evi's poppenkleren • Handgemaakt • Opbrengst voor KiKa&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="smallLink" href="#shop"&gt;Naar de shop&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&amp;nbsp;·&amp;nbsp;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="smallLink" href="#goede-doel"&gt;Goede doel&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&amp;nbsp;·&amp;nbsp;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="smallLink" href="#contact"&gt;Contact&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Product detail dialog --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;dialog id="dlg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dlgHead"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;strong id="dlgTitle"&gt;Product&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="x" id="dlgClose" aria-label="Sluiten"&gt;Sluiten&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dlgBody"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="dlgCols"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="dlgPhoto" id="dlgPhoto"&gt;Foto&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="dlgText"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="dlgDesc"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="chips" id="dlgChips"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="margin-top:10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Bestellen:&lt;/strong&gt; klik op de knop hieronder. We bevestigen per e-mail (verzenden of afhalen).</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dlgFoot"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn secondary" id="dlgOrder2"&gt;Bestel via e-mail&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn" id="dlgClose2"&gt;Sluiten&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/dialog&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// === 1) VERVANG HIER LATER HET ECHTE E-MAILADRES ===</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const SHOP_EMAIL = "evispoppenkleren@gmail.com";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sizeFilter = document.getElementById("sizeFilter");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const searchBox<span class="Apple-converted-space">  </span>= document.getElementById("searchBox");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const grid <span class="Apple-converted-space">      </span>= document.getElementById("productGrid");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const cards<span class="Apple-converted-space">      </span>= Array.from(grid.querySelectorAll(".card"));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("year").textContent = new Date().getFullYear();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Filtering</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function applyFilters(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const size = sizeFilter.value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const q = (searchBox.value || "").trim().toLowerCase();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>cards.forEach(card =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const matchesSize = (size === "all") || (card.dataset.size === size);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const hay = (</p>
+<p class="p1"><span class="Apple-converted-space">          </span>card.dataset.name + " " +</p>
+<p class="p1"><span class="Apple-converted-space">          </span>card.dataset.code + " " +</p>
+<p class="p1"><span class="Apple-converted-space">          </span>card.dataset.notes + " " +</p>
+<p class="p1"><span class="Apple-converted-space">          </span>card.dataset.size</p>
+<p class="p1"><span class="Apple-converted-space">        </span>).toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const matchesSearch = !q || hay.includes(q);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>card.style.display = (matchesSize &amp;&amp; matchesSearch) ? "" : "none";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>sizeFilter.addEventListener("change", applyFilters);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>searchBox.addEventListener("input", applyFilters);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Mailto builder</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function orderMailto(card){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const name<span class="Apple-converted-space">  </span>= card.dataset.name;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const code<span class="Apple-converted-space">  </span>= card.dataset.code;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const price = card.dataset.price;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const stock = card.dataset.stock;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const size<span class="Apple-converted-space">  </span>= humanSize(card.dataset.size);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const notes = card.dataset.notes;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const subject = `Bestelling – ${code} – ${name}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const body =</p>
+<p class="p1">`Hallo,</p>
+<p class="p2"><br></p>
+<p class="p1">Ik wil graag dit item bestellen/reserveren:</p>
+<p class="p2"><br></p>
+<p class="p1">- Item: ${name}</p>
+<p class="p1">- Itemnummer: ${code}</p>
+<p class="p1">- Poppenmaat: ${size}</p>
+<p class="p1">- Prijs: ${price}</p>
+<p class="p1">- Voorraad: ${stock}</p>
+<p class="p1">- Info: ${notes}</p>
+<p class="p2"><br></p>
+<p class="p1">Mijn gegevens:</p>
+<p class="p1">- Naam:</p>
+<p class="p1">- Telefoon (optioneel):</p>
+<p class="p1">- Verzenden of afhalen: (kies)</p>
+<p class="p1">- Adres (alleen bij verzenden):</p>
+<p class="p1">- Opmerkingen:</p>
+<p class="p2"><br></p>
+<p class="p1">Dankjewel!</p>
+<p class="p1">`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const url = `mailto:${encodeURIComponent(SHOP_EMAIL)}?subject=${encodeURIComponent(subject)}&amp;body=${encodeURIComponent(body)}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return url;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function humanSize(key){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>switch(key){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>case "barbie": return "Barbie / 29 cm";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>case "babyborn": return "Baby Born / 43 cm";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>case "30cm": return "Pop 30 cm";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>case "36cm": return "Pop 36 cm";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>default: return "Verschillend";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Dialog (details)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dlg = document.getElementById("dlg");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dlgTitle = document.getElementById("dlgTitle");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dlgDesc = document.getElementById("dlgDesc");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dlgChips = document.getElementById("dlgChips");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dlgOrder2 = document.getElementById("dlgOrder2");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dlgClose<span class="Apple-converted-space">  </span>= document.getElementById("dlgClose");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dlgClose2 = document.getElementById("dlgClose2");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let currentCard = null;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function openDetails(card){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>currentCard = card;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>dlgTitle.textContent = `${card.dataset.name} (${card.dataset.code})`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>dlgDesc.textContent = card.dataset.notes;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>dlgChips.innerHTML = "";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const chipList = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>humanSize(card.dataset.size),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"Handgemaakt",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>`Prijs: ${card.dataset.price}`,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>`Voorraad: ${card.dataset.stock}`</p>
+<p class="p1"><span class="Apple-converted-space">      </span>];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>chipList.forEach(t =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const s = document.createElement("span");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>s.className = "chip";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>s.textContent = t;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>dlgChips.appendChild(s);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>dlgOrder2.onclick = () =&gt; { window.location.href = orderMailto(card); };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>dlg.showModal();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function closeDialog(){ dlg.close(); currentCard = null; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>dlgClose.addEventListener("click", closeDialog);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>dlgClose2.addEventListener("click", closeDialog);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Card actions</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid.addEventListener("click", (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const btn = e.target.closest("button");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!btn) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const card = e.target.closest(".card");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!card) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const action = btn.dataset.action;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(action === "details") openDetails(card);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(action === "order") window.location.href = orderMailto(card);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Close dialog on Escape already supported. Also close when clicking backdrop (optional).</p>
+<p class="p1"><span class="Apple-converted-space">    </span>dlg.addEventListener("click", (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const rect = dlg.getBoundingClientRect();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const inDialog = (rect.top &lt;= e.clientY &amp;&amp; e.clientY &lt;= rect.bottom &amp;&amp; rect.left &lt;= e.clientX &amp;&amp; e.clientX &lt;= rect.right);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!inDialog) closeDialog();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
 </html>
