@@ -215,7 +215,7 @@
     .photo{
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 18px;
       border: 1px solid rgba(47,42,37,0.10);
       background: rgba(255,255,255,0.75);
@@ -359,7 +359,7 @@
     .modalMedia img{
       width: 100%;
       height: min(520px, 55vh);
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 20px;
       border: 1px solid rgba(47,42,37,0.10);
       background: rgba(255,255,255,0.75);
@@ -400,9 +400,9 @@
           <h2>Handgemaakte poppenkleren voor KiKa</h2>
           <p class="sub">
             Kies een setje, doneer het vaste bedrag via onze KiKa-pagina en reserveer daarna het item via e-mail.
-            <strong>Afhalen is op afspraak in Scheveningen.</strong>
+            <strong>Afhalen is op afspraak in Scheveningen of Haghorst.</strong>
           
-            <br><br><strong>Over Evi:</strong> Evi (10) breit samen met haar oma Hettie en haar breivriendinnen. De opbrengst gaat volledig naar KiKa.
+            <br><br><strong>Over Evi:</strong> Evi (10) maakt samen met haar oma Hettie en haar breivriendinnen poppenkleren. De opbrengst gaat volledig naar KiKa.
           </p>
 
           <div class="ctaRow">
@@ -1796,7 +1796,7 @@ Dankjewel!
       modalReserve.textContent = sold ? "Al verkocht" : "Reserveer via e-mail";
       modalHint.textContent = sold
         ? "Dit item is al verkocht."
-        : "Doneer eerst via KiKa en reserveer daarna via e-mail. Afhalen op afspraak in Scheveningen.";
+        : "Doneer eerst via KiKa en reserveer daarna via e-mail. Afhalen op afspraak in Scheveningen of Haghorst.";
 
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
